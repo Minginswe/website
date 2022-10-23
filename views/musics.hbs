@@ -1,0 +1,44 @@
+<h1 class="juzhong2">Musics</h1>
+
+{{#if errorMessages.length}}
+  <p class="juzhong">Couldn't fetch the musics because:</p>
+  <ul>
+    {{#each errorMessages}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+{{else}}
+
+  {{#if musics.length}}
+    <ul class="juzhong">
+      {{#each musics}}
+      
+          <li>
+            <a href="/musics/{{id}}">
+              {{title}}
+            </a>
+            ({{grade}}/10)
+          </li>
+      {{/each}}
+    </ul>
+
+  {{else}}
+    <p class="juzhong">We have no musics to recommend at the moment.</p>
+  {{/if}}
+
+{{/if}}
+<ul class="pagination" class="juzhong">
+  <li class="page-item disabled">
+    <a href="#" tabindex="-1">Previous</a>
+  </li>
+  <li class="page-item active">
+    <a href="#">1</a>
+  </li>
+  <li class="page-item">
+    <a href="#">2</a>
+
+  <li class="page-item">
+    <a href="#">Next</a>
+  </li>
+</ul>

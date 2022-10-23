@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music</title>
+    <link rel="stylesheet" href="/layout.css" />
+    <link rel="stylesheet" href="/spectre.css" />
+  </head>
+  <body>
+
+    <header class="navbar">
+      <section class="navbar-section">
+        <nav>
+          <a href="/">Start</a>
+          <a href="/musics">Musics </a>
+          {{! 如果LoggedIn和没LoggedIn的两种情况 }}
+          {{#if session.isLoggedIn}}
+            <a href="/musics/create">Create</a>
+            <a href="/musics/delete">Delete</a>
+            <a href="/musics/update">Update</a>
+          {{else}}
+            <a href="/login">Login</a>
+          {{/if}}
+        </nav>
+      </section>
+      <section class="navbar-section">
+        <div class="input-group input-inline">
+          <input class="form-input" type="text" placeholder="search" />
+          <button class="btn btn-primary input-group-btn">Search</button>
+        </div>
+      </section>
+    </header>
+
+    <div class="card">
+      <header>
+        Edit the content down blew
+      </header>
+      <div class="card-image">
+        <img
+          src="https://cdn.pixabay.com/photo/2020/11/12/05/24/music-5734433_1280.png"
+          class="img-responsive"
+        />
+      </div>
+      <div class="card-header">
+        {{{body}}}
+      </div>
+
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="">Contact me</a> </li>
+        <li><a href="">About us</a> </li>
+        <li><a href=""> Help</a></li>
+      </ul>
+    </footer>
+
+  </body>
+</html>
